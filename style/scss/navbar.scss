@@ -20,12 +20,49 @@
             transition: 0.5s;
         }
         &:hover {
-            background-color: white;
-            color: black;
             b {
                 color: red;
             }
         }
+    }
+    .nav-menu{
+        width: 30vh;
+        height: 100vh; 
+        position: fixed;
+        right: 0; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;   
+        background-color: transparent;  
+        transform: translate(5%,0); 
+        .menu-button {
+            position: absolute;
+            right: 0;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            align-self: flex-start;            
+        } 
+        ul {
+            display: none;
+            flex-direction: column;
+            list-style-type: none; 
+            margin-right: 0px;
+            text-align: center;
+            padding: 0px 15px 0px 0px;  
+            transition: 2s;         
+            li {
+                font-size: x-large;
+                margin-right: 0px;
+                margin-top: 15px;
+            }
+            &:hover {
+                visibility: visible;
+            }
+        }
+        
+        
     }
 }
 .moving-stuff {
@@ -53,5 +90,41 @@
         background-repeat: no-repeat;
     }
 }
+.slide-left {
+   
+    &:hover{
+        border-left: 2px solid white;
+        transition: .5s ;
+        ul {
+            display: flex;
+        }
+        .menu-button {     
+            visibility: hidden;       
+            right: unset;
+        }
+	-webkit-animation: slide-left .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-left .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}}
+ @-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(50px);
+              transform: translateX(50px);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(50px);
+              transform: translateX(50);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  
 
 }

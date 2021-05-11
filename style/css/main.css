@@ -23,12 +23,45 @@
   text-transform: uppercase;
   transition: 0.5s;
 }
-.first-section .navbar .logo:hover {
-  background-color: white;
-  color: black;
-}
 .first-section .navbar .logo:hover b {
   color: red;
+}
+.first-section .navbar .nav-menu {
+  width: 30vh;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background-color: transparent;
+  transform: translate(5%, 0);
+}
+.first-section .navbar .nav-menu .menu-button {
+  position: absolute;
+  right: 0;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  align-self: flex-start;
+}
+.first-section .navbar .nav-menu ul {
+  display: none;
+  flex-direction: column;
+  list-style-type: none;
+  margin-right: 0px;
+  text-align: center;
+  padding: 0px 15px 0px 0px;
+  transition: 2s;
+}
+.first-section .navbar .nav-menu ul li {
+  font-size: x-large;
+  margin-right: 0px;
+  margin-top: 15px;
+}
+.first-section .navbar .nav-menu ul:hover {
+  visibility: visible;
 }
 .first-section .moving-stuff {
   margin-top: 15px;
@@ -54,6 +87,39 @@
   height: 510px;
   background: url("https://i.gifer.com/origin/43/434771e3bf841e79abb2d4da70d6b1e2.gif");
   background-repeat: no-repeat;
+}
+.first-section .slide-left:hover {
+  border-left: 2px solid white;
+  transition: 0.5s;
+  -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.first-section .slide-left:hover ul {
+  display: flex;
+}
+.first-section .slide-left:hover .menu-button {
+  visibility: hidden;
+  right: unset;
+}
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
 }
 
 .navbar {
